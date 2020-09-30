@@ -12,10 +12,10 @@ struct {
 
     char name[60];
     int acc_no,age;
-    char address[60];
-    char citizenship[15];
+    char address[100];
+    char citizenship[20];
     double phone;
-    char acc_type[10];
+    char acc_type[20];
     float amt;
     struct date dob;
     struct date deposit;
@@ -25,6 +25,7 @@ struct {
 
 float interest(float t,float amount,int rate)
 {
+    //Simple Interest
     float SI;
     SI=(rate*t*amount)/100.0;
     return (SI);
@@ -46,7 +47,7 @@ void new_acc()
     account_no:
     system("cls");
     printf("\t\t\t\xB2\xB2\xB2\ ADD RECORD  \xB2\xB2\xB2\xB2");
-    printf("\n\n\nEnter today's date(mm/dd/yyyy):");
+    printf("\n\n\nEnter Today's date(mm/dd/yyyy):");
     scanf("%d/%d/%d",&add.deposit.month,&add.deposit.day,&add.deposit.year);
     printf("\nEnter the account number:");
     scanf("%d",&check.acc_no);
@@ -60,7 +61,7 @@ void new_acc()
             }
     }
     add.acc_no=check.acc_no;
-        printf("\nEnter the name:");
+        printf("\nEnter name:");
     scanf("%s",add.name);
     printf("\nEnter the date of birth(mm/dd/yyyy):");
     scanf("%d/%d/%d",&add.dob.month,&add.dob.day,&add.dob.year);
@@ -72,7 +73,7 @@ void new_acc()
     scanf("%s",add.citizenship);
     printf("\nEnter the phone number: ");
     scanf("%lf",&add.phone);
-    printf("\nEnter the amount to deposit:$");
+    printf("\nEnter the amount to deposit: $");
     scanf("%f",&add.amt);
     printf("\nType of account:\n\t#Saving\n\t#Current\n\t#Fixed1(for 1 year)\n\t#Fixed2(for 2 years)\n\t#Fixed3(for 3 years)\n\n\tEnter your choice:");
     scanf("%s",add.acc_type);
